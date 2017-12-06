@@ -44,10 +44,11 @@ class ReservationsController < ApplicationController
       redirect_to users_url
     else
       redirect_to new_users_reservation_url
-      flash[:notice] = @reservation.errors.full_messages.each { |error| puts "#{error.to_s}"}
 
 
-      # "Error: #{@reservation.errors.values.flatten}"
+        flash[:notice] = @reservation.errors.full_messages
+
+
     end
   end
 

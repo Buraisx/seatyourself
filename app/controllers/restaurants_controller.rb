@@ -15,8 +15,17 @@ before_action :ensure_user_owns_restaurant, only: [:edit, :update, :destroy]
     end
   end
 
+  def search_params
+    params.require(:search).permit(:name, :cuisine)
+  end
+
+
   def index
-    @restaurants = Restaurant.all
+    @restaurants = if params[:search]
+      Restaurant.where('name Like ?', "%#{params[:search]}%").or(Restaurant.where('cuisine Like ?', "%#{params[:search]}%"))
+    else
+      Restaurant.all
+    end
 
   end
 
