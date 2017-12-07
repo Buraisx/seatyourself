@@ -5,6 +5,7 @@
 <% if current_user != nil %>
   <% if current_user.id == @restaurant.user_id %>
 	 <%= link_to("Edit", edit_restaurant_url(@restaurant.id)) %>
+   <%if @reservations %>
    <% @reservations.each do |reservation| %>
    <ul>
    <% if reservation.restaurant_id == @restaurant.id %>
@@ -13,6 +14,7 @@
  </ul>
    <%end %>
   <% end %>
+  <%end %>
   <br>
 <% end %>
 
@@ -21,4 +23,3 @@
 
 
 <%= render 'reservations/form', restaurant: @restaurant, reservation: @reservation %>
-

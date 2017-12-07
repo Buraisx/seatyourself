@@ -2,6 +2,7 @@
   <h2><%= link_to restaurant.name, restaurant_path(restaurant)%></h2>
   <h4><%= restaurant.cuisine %></h4>
   <%= image_tag(restaurant.image_url) %>
+
   <p>
     <span>
       Open: </bold><%= restaurant.open_time.strftime("%l:%M %p")%> | 
