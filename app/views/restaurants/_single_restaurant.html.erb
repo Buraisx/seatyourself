@@ -2,7 +2,12 @@
   <h2><%= link_to restaurant.name, restaurant_path(restaurant)%></h2>
   <h4><%= restaurant.cuisine %></h4>
   <%= image_tag(restaurant.image_url) %>
-  <p>Open <%= restaurant.open_time.strftime("%l:%M %p")%> to <%= restaurant.close_time.strftime("%l:%M %p")%></p>
-  
+
+  <p>
+    <span>
+      Open: </bold><%= restaurant.open_time.strftime("%l:%M %p")%> | 
+      Close: </strong><%= restaurant.close_time.strftime("%l:%M %p")%>
+    </span>
+  </p>
 
 </div>

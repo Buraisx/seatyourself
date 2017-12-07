@@ -11,8 +11,8 @@
 <div class="row">
 	<div class="col-sm-12">
 		<h3 class="reservation-text">Reservations</h3>
+    <p> <%= link_to("View Restaurants", root_path) %> </p>
 	</div>
-	
 </div>
 
 <div class="row">
@@ -24,7 +24,6 @@
 			<%= link_to("Edit", edit_restaurant_reservation_url(reservation.restaurant_id, reservation)) %>
 	| <%= link_to("Delete", restaurant_reservation_url(reservation.restaurant_id, reservation), method: :delete, data: {confirm: "Are you sure?"}) %>
 		</div>
-	
+
 	<%end %>
 </div>
-

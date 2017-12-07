@@ -1,6 +1,6 @@
 <%= form_for([restaurant, reservation]) do |f|%>
 	<%= f.label :party_size %>
-	<%= f.text_field :party_size%>
+	<%= f.number_field :party_size, min:0, max: 20, default: 0%>
   <%= f.label :Reservation_date  %>
   <%= f.datetime_select :date_time,
   :start_year => Date.current.year,
@@ -9,4 +9,15 @@
   :ampm => true,
   :minute_step =>15 %>
 <%= f.submit %>
+<% if reservation.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+    <ul>
+    <% reservation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <% end %>
