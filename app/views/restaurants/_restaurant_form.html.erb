@@ -4,8 +4,8 @@
 	<%= f.text_field :name %>
 </p>
 <p>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
 </p>
 <p>
   <%= f.label :address %>
@@ -17,15 +17,20 @@
 </p>
 <p>
   <%= f.label :open_time %>
-	<%= f.time_field :open_time%>
+	<%= f.time_select :open_time,
+  :minute_step =>30,
+  :ampm => true %>
 </p>
 <p>
   <%= f.label :close_time %>
-  <%= f.time_field :close_time%>
+  <%= f.time_select :close_time,
+  :minute_step =>30,
+  :ampm => true %>
 </p>
+
 <p>
-  <%= f.label :user_id %>
-  <%= f.text_field :user_id%>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url%>
 </p>
 <p>
   <%= f.submit %>
