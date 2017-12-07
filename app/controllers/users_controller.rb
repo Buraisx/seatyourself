@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 	def show
 		@user = current_user
     @restaurants = Restaurant.all
+    @reservations = Reservation.all
 
 	end
 
